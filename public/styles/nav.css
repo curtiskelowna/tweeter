@@ -6,11 +6,28 @@ nav {
   width: 100%;
   background-color: #4056A1;
   position: fixed;
-  top: 0px;
+  top: 0;
   padding: 0 1.5em;
+  z-index: 10;
+  color: #FFFFFF;
 }
 
 nav>span {
+  font-family: 'Bungee', sans-serif;
+  font-size: 1.5em;
+}
+
+.nav-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fa-angles-down {
+  color: red;
+}
+
+/* .nav-text > span{
   color: #FFFFFF;
   font-size: 2.5em;
   font-weight: 400;
@@ -53,4 +70,4 @@ i {
   animation: arrowMovement 0.5s;
   animation-direction: alternate;
   animation-iteration-count: infinite;
-}
+} */
