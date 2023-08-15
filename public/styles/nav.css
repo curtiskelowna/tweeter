@@ -2,7 +2,9 @@ nav {
   display: flex;
   align-items: flex-end;
   height: 120px;
+  width: 100%;
   background-color: #4056A1;
+  position: fixed;
 }
 
 span {
@@ -20,7 +22,7 @@ b {
   font-family: 'Source Sans 3', sans-serif;
 }
 
-small {
+a {
   color: #FFFFFF;
   font-size: 15px;
   font-weight: 300;
@@ -29,13 +31,6 @@ small {
 
 i {
   color: #cb1b1b;
-  font-size: 15px;
-  font-weight: 300;
-  font-family: 'Source Sans 3', sans-serif;
-}
-
-a {
-  color: #FFFFFF;
   font-size: 15px;
   font-weight: 300;
   font-family: 'Source Sans 3', sans-serif;
