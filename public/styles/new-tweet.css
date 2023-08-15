@@ -1,0 +1,36 @@
+#tweet-text {
+  display: block;
+  background: none;
+  height: 1.5em;
+  line-height: 0.9em;
+  margin: 0.75em 0 1em 0;
+  padding: 0 0 10px 0;
+  border: none;
+  border-bottom: solid black 2px;
+  width: 100%;
+  resize: none;
+}
+
+#tweet-text:focus {
+  outline: none;
+}
+
+.tweet-btn {
+  border-radius: 0;
+  background-color: #4152A1;
+  border: none;
+  color: #FFFFFF;
+  font-size: 0.75em;
+  text-align: center;
+  cursor: pointer;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.new-tweet {
+  width: inherit;
+}
+
+.countcont {
+  display: flex;
+  justify-content: space-between;
+}

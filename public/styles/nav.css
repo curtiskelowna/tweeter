@@ -27,35 +27,6 @@ nav>span {
   color: red;
 }
 
-/* .nav-text > span{
-  color: #FFFFFF;
-  font-size: 2.5em;
-  font-weight: 400;
-  font-family: 'Bungee';
-}
-
-.nav-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav-text p {
-  cursor: pointer;
-  color: white;
-}
-
-nav>div>p>span {
-  font-weight: bold;
-}
-
-i {
-  color: #cb1b1b;
-  cursor: pointer;
-  margin-top: -1em;
-}
-
 @keyframes arrowMovement {
   from {
     transform: translate3d(0, -5px, 0);
@@ -70,4 +41,4 @@ i {
   animation: arrowMovement 0.5s;
   animation-direction: alternate;
   animation-iteration-count: infinite;
-} */
+}
