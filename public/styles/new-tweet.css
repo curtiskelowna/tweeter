@@ -20,7 +20,7 @@
   background-color: #4152A1;
   border: none;
   color: #FFFFFF;
-  font-size: 0.75em;
+  font-size: 1em;
   text-align: center;
   cursor: pointer;
   font-family: 'Source Sans 3', sans-serif;
@@ -33,4 +33,14 @@
 .countcont {
   display: flex;
   justify-content: space-between;
+}
+
+.counter {
+  font-size: 1em;
+  color: #4152A1;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.red {
+  color: red;
 }
