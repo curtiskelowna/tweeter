@@ -6,6 +6,23 @@
 
 $(document).ready(function() {
 
+  $('#tweet-form').on('submit', function(event) {
+    event.preventDefault();
+    const $tweetData = $(this).serialize();
+    console.log($tweetData);
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: $tweetData
+    })
+      .then(function() {
+        console.log('Success!');
+      })
+      .catch(function(error) {
+        console.log('Error:', error);
+      });
+  });
+
   const data = [{
     "user": {
       "name": "Newton",
