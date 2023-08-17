@@ -10,6 +10,20 @@ $(document).ready(function() {
     event.preventDefault();
     const $tweetData = $(this).serialize();
     console.log($tweetData);
+    const validateTweet = function(tweet) {
+      if (tweet.length === 0) {
+        alert('Tweet is empty!');
+        return false;
+      }
+      if (tweet.length > 140) {
+        alert('Tweet is too long!');
+        return false;
+      }
+      return true;
+    };
+    if (!validateTweet($tweetData.slice(5))) {
+      return;
+    }
     $.ajax({
       url: '/tweets',
       method: 'POST',
@@ -19,7 +33,7 @@ $(document).ready(function() {
         console.log('Success!');
       })
       .catch(function(error) {
-        console.log('Error:', error);
+        console.log('Error:', (error));
       });
   });
 
