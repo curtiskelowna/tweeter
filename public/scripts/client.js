@@ -12,28 +12,32 @@ $(document).ready(function() {
     return div.innerHTML;
   };
 
+  $('#tweet-text').on('input', function() {
+    $('.new-tweet-error').slideUp('slow');
+  });
+
   $('#tweet-form').on('submit', function(event) {
     event.preventDefault();
-    const $tweetData = $(this).serialize();
+    const $tweetData = $('#tweet-text').val();
     console.log($tweetData);
     const validateTweet = function(tweet) {
       if (tweet.length === 0) {
-        alert('Tweet is empty!');
+        $('.new-tweet-error').text('Tweet is empty!').hide().slideDown('slow');
         return false;
       }
       if (tweet.length > 140) {
-        alert('Tweet is too long!');
+        $('.new-tweet-error').text('Tweet is too long!').hide().slideDown('slow');
         return false;
       }
       return true;
     };
-    if (!validateTweet($tweetData.slice(5))) {
+    if (!validateTweet($tweetData)) {
       return;
     }
     $.ajax({
       url: '/tweets',
       method: 'POST',
-      data: $tweetData
+      data: $(this).serialize()
     })
       .then(function() {
         loadTweets();
@@ -43,6 +47,7 @@ $(document).ready(function() {
         console.log('Error:', (error));
       });
     $('#tweet-text').val('');
+    $('#tweet-text').trigger('input');
   });
 
   const loadTweets = function() {

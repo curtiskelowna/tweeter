@@ -58,7 +58,10 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section id="new-tweet-form" class="new-tweet">
-      <!-- <h2>Compose Tweet</h2> -->
+      <div class="new-tweet-error">
+        <i class="fa-sharp fa-solid fa-triangle-exclamation"></i>
+        <div class="error" style="display: none;">Error message</div>
+      </div>
       <form id="tweet-form" method="POST" action="/tweets">
         <label for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>

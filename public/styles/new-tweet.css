@@ -121,5 +121,28 @@ article p {
   font-family: 'Source Sans 3', sans-serif;
   font-weight: 300;
   margin: 0.5em 0;
-  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+article footer i {
+  margin-left: 0.5em;
+  color: #4152A1;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+article footer i:hover {
+  color: #e9b20d;
+}
+
+.new-tweet-error {
+  display: none;
+  color: red;
+  font-size: 1em;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  border: solid red 2px;
+  border-radius: 5px;
+  padding: 0.5em;
+  margin-bottom: 1em;
 }
