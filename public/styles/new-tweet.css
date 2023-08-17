@@ -120,4 +120,6 @@ article p {
   font-size: 1em;
   font-family: 'Source Sans 3', sans-serif;
   font-weight: 300;
+  margin: 0.5em 0;
+  word-break: break-all;
 }

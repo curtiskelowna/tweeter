@@ -6,6 +6,12 @@
 
 $(document).ready(function() {
 
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   $('#tweet-form').on('submit', function(event) {
     event.preventDefault();
     const $tweetData = $(this).serialize();
@@ -70,7 +76,7 @@ $(document).ready(function() {
     </div>
     <p class="tweet-header-right">${tweet.user.handle}</p>
   </header>
-  <p class="tweet-content">${(tweet.content.text)}</p>
+  <p class="tweet-content">${escape(tweet.content.text)}</p>
   <footer class="tweet-footer">
     <p>${timeago.format(tweet.created_at)}</p>
     <div class="tweet-footer-right">
