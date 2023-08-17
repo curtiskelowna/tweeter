@@ -48,8 +48,6 @@
 .icons {
   display: flex;
   justify-content: flex-end;
-  /* width: 100%; */
-  /* margin-top: 1em; */
 }
 
 .icons i {
@@ -86,13 +84,20 @@ article.tweet header {
   justify-content: space-between;
   align-items: center;
   font-family: 'Source Sans 3', sans-serif;
-  font-size: 20px;
+  font-size: 0.75em;
   font-weight: 300;
 }
 
 article.tweet header img {
-  width: 75px;
+  width: 2.5em;
   object-fit: cover;
+  margin: 0 0.5em;
+}
+
+article.tweet header div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .person {

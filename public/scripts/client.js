@@ -30,11 +30,13 @@ $(document).ready(function() {
       data: $tweetData
     })
       .then(function() {
+        loadTweets();
         console.log('Success!');
       })
       .catch(function(error) {
         console.log('Error:', (error));
       });
+    $('#tweet-text').val('');
   });
 
   const loadTweets = function() {
@@ -52,9 +54,10 @@ $(document).ready(function() {
   };
 
   const renderTweets = function(tweets) {
+    $('.tweets-container').empty();
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $('.tweets-container').append($tweet);
+      $('.tweets-container').prepend($tweet);
     }
   };
 
