@@ -26,3 +26,10 @@ This repository is the starter code for the project: Students will fork and clon
 - An error message will appear if you hit the tweet button with no charcters or too many characters.
 - The tweet text area will start hidden and you can toggle it open and closed with the write new tweet arrow button, you can immediately write in the text area without clicking into it
 - if the page is long enough to be scrolled down then a second toggle button will appear at the bottom right which will bring you back to the top and focus you into the tweet text area.
+
+##Screenshots
+
+!["Screenshot of Homepage"](https://github.com/curtiskelowna/tweeter/blob/master/docs/tweeter-homepage.png?raw=true)
+!["Screenshot of text area"](https://github.com/curtiskelowna/tweeter/blob/master/docs/tweeter-text-area.png?raw=true)
+!["Screenshot of red character counter"](https://github.com/curtiskelowna/tweeter/blob/master/docs/tweeter-character-counter-red.png?raw=true)
+!["Screenshot of scroll-to-top button"](https://github.com/curtiskelowna/tweeter/blob/master/docs/tweeter-scroll-to-top.png?raw=true)
