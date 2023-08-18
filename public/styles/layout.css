@@ -44,4 +44,5 @@ main {
   font-size: 1em;
   font-weight: 600;
   margin: 0 auto;
+  overflow-x: hidden;
 }
