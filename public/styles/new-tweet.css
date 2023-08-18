@@ -4,9 +4,9 @@
   height: 1.5em;
   line-height: 0.9em;
   margin: 0.75em 0 1em 0;
-  padding: 0 0 10px 0;
+  padding: 0 0 0.2em 0;
   border: none;
-  border-bottom: solid black 2px;
+  border-bottom: solid black 0.1em;
   width: 100%;
   resize: none;
 }
@@ -41,10 +41,6 @@
   font-family: 'Source Sans 3', sans-serif;
 }
 
-.red {
-  color: red;
-}
-
 .icons {
   display: flex;
   justify-content: flex-end;
@@ -69,14 +65,14 @@
 .tweet {
   display: flex;
   flex-direction: column;
-  border: solid black 2px;
-  border-radius: 5px;
+  border: solid black 0.1em;
+  border-radius: .25em;
   padding: 1em;
   margin-bottom: 1em;
 }
 
 article.tweet:hover {
-  box-shadow: 0 0 10px #000000;
+  box-shadow: 0 0 0.3em #000000;
 }
 
 article.tweet header {
@@ -109,9 +105,9 @@ article footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 2px solid #000000;
+  border-top: 0.2em solid #000000;
   padding-top: 0.5em;
-  font-size: 15px;
+  font-size: 0.6em;
   font-family: 'Source Sans 3', sans-serif;
   font-weight: 300;
 }
@@ -121,7 +117,8 @@ article p {
   font-family: 'Source Sans 3', sans-serif;
   font-weight: 300;
   margin: 0.5em 0;
-  overflow-wrap: break-word;
+  word-wrap: break-word;
+  resize: vertical;
 }
 
 article footer i {
@@ -141,8 +138,23 @@ article footer i:hover {
   font-size: 1em;
   font-family: 'Source Sans 3', sans-serif;
   font-weight: 600;
-  border: solid red 2px;
-  border-radius: 5px;
+  border: solid red 0.1em;
+  border-radius: 0.2em;
   padding: 0.5em;
   margin-bottom: 1em;
+}
+
+.tweets-header {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 1em;
+  right: 2em;
+  font-size: 1em;
+  color: red;
+  cursor: pointer;
 }

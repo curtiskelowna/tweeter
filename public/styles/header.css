@@ -8,13 +8,13 @@
   color: #fff;
   font-family: 'Source Sans 3', sans-serif;
   width: 100%;
-  padding-top: 120px;
-  height: 450px;
+  padding-top: 6em;
+  height: 19em;
 }
 
 .profile>div {
   padding-bottom: 1em;
-  margin-top: -25px;
+  margin-top: -1em;
 }
 
 .profile>div>span {

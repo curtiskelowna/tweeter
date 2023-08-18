@@ -12,66 +12,6 @@ $(document).ready(function() {
     return div.innerHTML;
   };
 
-  $('#tweet-text').on('input', function() {
-    $('.new-tweet-error').slideUp('slow');
-  });
-
-  $('#tweet-form').on('submit', function(event) {
-    event.preventDefault();
-    const $tweetData = $('#tweet-text').val();
-    console.log($tweetData);
-    const validateTweet = function(tweet) {
-      if (tweet.length === 0) {
-        $('.new-tweet-error').text('Tweet is empty!').hide().slideDown('slow');
-        return false;
-      }
-      if (tweet.length > 140) {
-        $('.new-tweet-error').text('Tweet is too long!').hide().slideDown('slow');
-        return false;
-      }
-      return true;
-    };
-    if (!validateTweet($tweetData)) {
-      return;
-    }
-    $.ajax({
-      url: '/tweets',
-      method: 'POST',
-      data: $(this).serialize()
-    })
-      .then(function() {
-        loadTweets();
-        console.log('Success!');
-      })
-      .catch(function(error) {
-        console.log('Error:', (error));
-      });
-    $('#tweet-text').val('');
-    $('#tweet-text').trigger('input');
-  });
-
-  const loadTweets = function() {
-    $.ajax({
-      url: '/tweets',
-      method: 'GET',
-      dataType: 'json'
-    })
-      .then(function(data) {
-        renderTweets(data);
-      })
-      .catch(function(error) {
-        console.log('Error:', error);
-      });
-  };
-
-  const renderTweets = function(tweets) {
-    $('.tweets-container').empty();
-    for (const tweet of tweets) {
-      const $tweet = createTweetElement(tweet);
-      $('.tweets-container').prepend($tweet);
-    }
-  };
-
   const createTweetElement = function(tweet) {
     const $tweet = $(`<article class="tweet">
   <header class="tweet-header">
@@ -93,6 +33,82 @@ $(document).ready(function() {
 </article>`);
     return $tweet;
   };
+
+  const renderTweets = function(tweets) {
+    $('.tweets-container').empty();
+    for (const tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      $('.tweets-container').prepend($tweet);
+    }
+  };
+
+  const loadTweets = function() {
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      dataType: 'json'
+    })
+      .then(function(data) {
+        renderTweets(data);
+      })
+      .catch(function(error) {
+        console.log('Error:', error);
+      });
+  };
+
+  const validateTweet = function(tweet) {
+    if (tweet.length === 0) {
+      $('.new-tweet-error').text('Tweet is empty!').hide().slideDown('slow');
+      return false;
+    }
+    if (tweet.length > 140) {
+      $('.new-tweet-error').text('Tweet is too long!').hide().slideDown('slow');
+      return false;
+    }
+    return true;
+  };
+
+  $('#tweet-text').on('input', function() {
+    $('.new-tweet-error').slideUp('slow');
+  });
+
+  $('.compose-button').on('click', function() {
+    $('.new-tweet').slideToggle('slow');
+    $('#tweet-text').focus();
+  });
+
+  $('.new-tweet').hide();
+  // $('.back-to-top').hide();
+
+  $('.back-to-top').on('click', function() {
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
+    $('.new-tweet').slideDown('slow');
+    $('#tweet-text').focus();
+  });
+
+  $('#tweet-form').on('submit', function(event) {
+    event.preventDefault();
+    const $tweetData = $('#tweet-text').val();
+    console.log($tweetData);
+
+    if (!validateTweet($tweetData)) {
+      return;
+    }
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: $(this).serialize()
+    })
+      .then(function() {
+        loadTweets();
+        console.log('Success!');
+      })
+      .catch(function(error) {
+        console.log('Error:', (error));
+      });
+    $('#tweet-text').val('');
+    $('#tweet-text').trigger('input');
+  });
 
   loadTweets();
 
